@@ -1,6 +1,6 @@
 const alvo = document.getElementById('alvo');
 let cont = 0;
-let contErros = -1;
+let contErros = 0;
 function comecar() {
     const main = document.getElementById('main');
 
@@ -16,6 +16,7 @@ function comecar() {
     document.getElementById('cont').classList.add('aparecerCont');
     document.getElementById('contErros').classList.add('aparecerCont');
     document.body.classList.add('aparecerCont');
+    contErros = -1;
 }
 
 function mira() {
@@ -27,7 +28,7 @@ function mira() {
 
     cont++;
     document.getElementById('cont').innerHTML = 'Acertos: ' + cont;
-    contErros--;
+
 }
 
 function errou() {
