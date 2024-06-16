@@ -7,11 +7,15 @@
 
 body, html {
     width: 100%;
-    height: 90%;
+    height: 100%;
     background-color: #212121;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+body.aparecerCont {
+    cursor: crosshair;
 }
 
 main {
@@ -19,7 +23,8 @@ main {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    background: linear-gradient(to bottom, rgb(168, 105, 228), rgb(154, 68, 235));
+    background: linear-gradient(to bottom, rgb(219, 160, 51), rgb(162, 110, 11));
+    filter: drop-shadow(5px 5px white);
     color: white;
     border-radius: 20px 40px;
     width: 400px;
@@ -30,18 +35,19 @@ main.removerMain {
     display: none;
 }
 
-#comecar {
+#comecar {  
     margin: 20px 0;
     width: 100px;
     background-color: transparent;
     height: 50px;
     border-radius: 60px;
-    border: 2px solid purple;
+    border: 3px solid black;
+    filter: drop-shadow(2px black);
     transition: ease 0.4s;
 }
 
 #comecar:hover {
-    background-color: blueviolet;
+    background-color: rgb(254, 157, 46);
     transition: ease 0.4s;
     cursor: pointer;
 }
@@ -62,7 +68,7 @@ main.removerMain {
     position: absolute;
     top: 0;
     left: 0;
-    cursor: pointer;
+    cursor: crosshair;
 }
 
 #cont {
@@ -72,7 +78,19 @@ main.removerMain {
 #cont.aparecerCont {
     display: block;
     position: absolute;
-    top: 0; 
+    top: 0;     
+    font-size: 50px;
+    color: white;
+}
+
+#contErros {
+    display: none;
+}
+
+#contErros.aparecerCont {
+    display: block;
+    position: absolute;
+    top: 94%; 
     font-size: 50px;
     color: white;
 }

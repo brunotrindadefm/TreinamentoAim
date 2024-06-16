@@ -1,5 +1,6 @@
 const alvo = document.getElementById('alvo');
 let cont = 0;
+let contErros = -1;
 function comecar() {
     const main = document.getElementById('main');
 
@@ -13,6 +14,8 @@ function comecar() {
     alvo.style.left = posicaoLeft + 'px'
 
     document.getElementById('cont').classList.add('aparecerCont');
+    document.getElementById('contErros').classList.add('aparecerCont');
+    document.body.classList.add('aparecerCont');
 }
 
 function mira() {
@@ -23,10 +26,11 @@ function mira() {
     alvo.style.left = posicaoLeft + 'px'
 
     cont++;
-    document.getElementById('cont').innerHTML = cont;
+    document.getElementById('cont').innerHTML = 'Acertos: ' + cont;
+    contErros--;
 }
 
 function errou() {
-    cont--;
-    document.getElementById('cont').innerHTML = cont;
+    contErros++;
+    document.getElementById('contErros').innerHTML = 'Erros:  ' + contErros;
 }
