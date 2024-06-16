@@ -28,6 +28,7 @@ function mira() {
 
     cont++;
     document.getElementById('cont').innerHTML = 'Acertos: ' + cont;
+    contErros--;
 
 }
 
