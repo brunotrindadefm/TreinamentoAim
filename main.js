@@ -1,6 +1,8 @@
 const alvo = document.getElementById('alvo');
 let cont = 0;
 let contErros = 0;
+let tempo = 2900;
+
 function comecar() {
     const main = document.getElementById('main');
 
@@ -24,11 +26,18 @@ function mira() {
     posicaoLeft = Math.random() * (window.innerWidth - alvo.offsetWidth);
 
     alvo.style.top = posicaoTop + 'px'
-    alvo.style.left = posicaoLeft + 'px'
+    alvo.style.left = posicaoLeft + 'px',
 
     cont++;
     document.getElementById('cont').innerHTML = 'Acertos: ' + cont;
     contErros--;
+
+    alvo.style.animation = 'none'; 
+    alvo.offsetHeight; 
+    alvo.offsetWidth;   
+    alvo.style.animation = null;
+
+    tempo = 2900;
 
 }
 
@@ -36,3 +45,24 @@ function errou() {
     contErros++;
     document.getElementById('contErros').innerHTML = 'Erros:  ' + contErros;
 }
+
+function aparecerAlvo() {
+    alvo.style.animation = 'none'; 
+    alvo.offsetHeight; 
+    alvo.offsetWidth; 
+    alvo.style.animation = null;
+}
+
+function mudarAlvo () {
+    posicaoTop = Math.random() * (window.innerHeight - alvo.offsetHeight);
+    posicaoLeft = Math.random() * (window.innerWidth - alvo.offsetWidth);
+
+    alvo.style.top = posicaoTop + 'px'
+    alvo.style.left = posicaoLeft + 'px'
+
+}
+
+setInterval(aparecerAlvo,tempo);
+setInterval(mudarAlvo,tempo);   
+
+

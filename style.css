@@ -68,6 +68,7 @@ main.removerMain {
     position: absolute;
     top: 0;
     left: 0;
+    animation: alvoDiminuindo ease 5s;
     cursor: crosshair;
 }
 
@@ -103,3 +104,33 @@ main.removerMain {
     }
 }
 
+@keyframes alvoDiminuindo{
+    to {
+        width: 0px;
+        height: 0px;
+    }
+    from {
+        width: 10px;
+        height: 10px;
+    }
+    from {
+        width: 20px;
+        height: 20px;
+    }
+    from {
+        width: 30px;
+        height: 30px;
+    }
+    from {
+        width: 40px;
+        height: 40px;
+    }
+    from {
+        width: 50px;
+        height: 50px;
+    }
+    from {
+        width: 60px;
+        height: 60px;
+    }
+}
