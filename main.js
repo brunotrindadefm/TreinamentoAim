@@ -45,6 +45,18 @@ function mira() {
 function errou() {
     contErros++;
     document.getElementById('contErros').innerHTML = 'Erros:  ' + contErros;
+    
+    alvo.style.animation = 'none'; 
+    alvo.offsetHeight; 
+    alvo.offsetWidth; 
+    alvo.style.animation = null;
+
+    posicaoTop = Math.random() * (window.innerHeight - alvo.offsetHeight);
+    posicaoLeft = Math.random() * (window.innerWidth - alvo.offsetWidth);
+
+    alvo.style.top = posicaoTop + 'px'
+    alvo.style.left = posicaoLeft + 'px'
+    startTimeout();
 }
 
 function aparecerAlvo() {

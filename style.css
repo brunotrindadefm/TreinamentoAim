@@ -47,7 +47,7 @@ main.removerMain {
 }
 
 #comecar:hover {
-    background-color: rgb(92, 236, 121);
+    background-color: whitesmoke;
     transition: ease 0.4s;
     box-shadow: 4px 4px 4px black;
     cursor: pointer;
