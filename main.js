@@ -1,6 +1,7 @@
 const alvo = document.getElementById('alvo');
 let cont = 0;
 let contErros = 0;
+let timeoutId;
 
 function comecar() {
     const main = document.getElementById('main');
@@ -18,6 +19,7 @@ function comecar() {
     document.getElementById('contErros').classList.add('aparecerCont');
     document.body.classList.add('aparecerCont');
     contErros = -1;
+    startTimeout();
 }
 
 function mira() {
@@ -35,6 +37,8 @@ function mira() {
     alvo.offsetHeight; 
     alvo.offsetWidth;   
     alvo.style.animation = null;
+
+    startTimeout();
 
 }
 
@@ -58,6 +62,11 @@ function aparecerAlvo() {
     contErros++;
     document.getElementById('contErros').innerHTML = 'Erros:  ' + contErros;
 
+    startTimeout();
+
 }
 
-setInterval(aparecerAlvo,3000);
+function startTimeout() {
+    clearTimeout(timeoutId);
+    timeoutId = setTimeout(aparecerAlvo, 3000);
+}
