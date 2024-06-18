@@ -41,14 +41,15 @@ main.removerMain {
     background-color: transparent;
     height: 50px;
     border-radius: 60px;
-    border: 3px solid black;
-    filter: drop-shadow(2px black);
+    border: none;
+    box-shadow: 2px 2px 2px black;
     transition: ease 0.4s;
 }
 
 #comecar:hover {
-    background-color: rgb(254, 157, 46);
+    background-color: rgb(92, 236, 121);
     transition: ease 0.4s;
+    box-shadow: 4px 4px 4px black;
     cursor: pointer;
 }
 
