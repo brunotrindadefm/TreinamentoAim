@@ -17,6 +17,7 @@ function comecar() {
 
     document.getElementById('cont').classList.add('aparecerCont');
     document.getElementById('contErros').classList.add('aparecerCont');
+    document.getElementById('icon').classList.add('aparecerCont');
     document.body.classList.add('aparecerCont');
     contErros = -1;
     startTimeout();
