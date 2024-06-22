@@ -1,6 +1,6 @@
 const alvo = document.getElementById('alvo');
 let cont = 0;
-let contErros = 0;
+let contErros = -1;
 let timeoutId;
 
 function comecar() {
@@ -9,35 +9,25 @@ function comecar() {
     main.classList.add('removerMain');
 
     alvo.classList.add('aparecerAlvo');
-    posicaoTop = Math.random() * (window.innerHeight - alvo.offsetHeight);
-    posicaoLeft = Math.random() * (window.innerWidth - alvo.offsetWidth);
 
-    alvo.style.top = posicaoTop + 'px'
-    alvo.style.left = posicaoLeft + 'px'
+    mudandoAlvoDeLugar()
 
     document.getElementById('cont').classList.add('aparecerCont');
     document.getElementById('contErros').classList.add('aparecerCont');
     document.getElementById('icon').classList.add('aparecerCont');
     document.body.classList.add('aparecerCont');
-    contErros = -1;
     startTimeout();
 }
 
 function mira() {
-    posicaoTop = Math.random() * (window.innerHeight - alvo.offsetHeight);
-    posicaoLeft = Math.random() * (window.innerWidth - alvo.offsetWidth);
 
-    alvo.style.top = posicaoTop + 'px'
-    alvo.style.left = posicaoLeft + 'px',
+    mudandoAlvoDeLugar()
 
     cont++;
     document.getElementById('cont').innerHTML = 'Acertos: ' + cont;
     contErros--;
 
-    alvo.style.animation = 'none'; 
-    alvo.offsetHeight; 
-    alvo.offsetWidth;   
-    alvo.style.animation = null;
+    resetarAnimacao()
 
     startTimeout();
 
@@ -47,30 +37,18 @@ function errou() {
     contErros++;
     document.getElementById('contErros').innerHTML = 'Erros:  ' + contErros;
     
-    alvo.style.animation = 'none'; 
-    alvo.offsetHeight; 
-    alvo.offsetWidth; 
-    alvo.style.animation = null;
+    resetarAnimacao()
 
-    posicaoTop = Math.random() * (window.innerHeight - alvo.offsetHeight);
-    posicaoLeft = Math.random() * (window.innerWidth - alvo.offsetWidth);
+    mudandoAlvoDeLugar()
 
-    alvo.style.top = posicaoTop + 'px'
-    alvo.style.left = posicaoLeft + 'px'
     startTimeout();
 }
 
 function aparecerAlvo() {
-    alvo.style.animation = 'none'; 
-    alvo.offsetHeight; 
-    alvo.offsetWidth; 
-    alvo.style.animation = null;
 
-    posicaoTop = Math.random() * (window.innerHeight - alvo.offsetHeight);
-    posicaoLeft = Math.random() * (window.innerWidth - alvo.offsetWidth);
+    resetarAnimacao()
 
-    alvo.style.top = posicaoTop + 'px'
-    alvo.style.left = posicaoLeft + 'px'
+    mudandoAlvoDeLugar()
 
     contErros++;
     document.getElementById('contErros').innerHTML = 'Erros:  ' + contErros;
@@ -82,4 +60,19 @@ function aparecerAlvo() {
 function startTimeout() {
     clearTimeout(timeoutId);
     timeoutId = setTimeout(aparecerAlvo, 3000);
+}
+
+function resetarAnimacao() {
+    alvo.style.animation = 'none'; 
+    alvo.offsetHeight; 
+    alvo.offsetWidth; 
+    alvo.style.animation = null;
+}
+
+function mudandoAlvoDeLugar() {
+    posicaoTop = Math.random() * (window.innerHeight - alvo.offsetHeight);
+    posicaoLeft = Math.random() * (window.innerWidth - alvo.offsetWidth);
+
+    alvo.style.top = posicaoTop + 'px'
+    alvo.style.left = posicaoLeft + 'px'
 }
